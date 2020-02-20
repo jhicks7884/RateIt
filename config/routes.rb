@@ -4,14 +4,10 @@ Rails.application.routes.draw do
   get 'home', to: 'users#home'
 
   get 'signup', to: 'users#signup'
-
   post "/signup", to: 'users#new_sign_up'
- 
-  #get '/auth/:provider/callback', to: 'sessions#create'
 
   get 'login', to: 'users#login'
-
-  post '/sessions', to: 'sessions#create'
+  post '/login', to: 'sessions#logged_in'
 
   get "/show", to: 'users#show'
 

@@ -1,43 +1,58 @@
 class UsersController < ApplicationController
-   # protect_from_forgery
-  # before_action :authenticate
+    protect_from_forgery
+   # before_action :authenticate
 
     def user   #homepage
       render "/home"
+
     end
 
     def user_sign_up  #sign_up page
-      render "/signup"
+      @user = User.new
     end
 
     def new_sign_up  # creating users
-        @user = User.create(user_params)
-        if @user.valid?
-           @user.save
-           session["user_id"] = @user.id
+        @user = User.new(user_params)
 
+         if @user.save
+           session[:user_id] = @user.id
            redirect_to '/show'
-        else
+          else
             redirect_to '/login'
         end
     end
 
-    def user_login # logging in a user
-        if logged_in?
-          @user = User.find(username: params[:username])
-          @user && @user.authenticate(params[:password])
-          @user.valid?
-          @user.save
-          session[:user_id] = @user.id
-          redirect_to '/show'
-        else
-          redirect_to '/login'
-        end
+    def show
+      @user = User.find_by(id: params[:id])
+    end
+
+    def login # route to logging user in
+
+       #redirect_to '/login'
+    end
+
+
+    def logged_in #Logged user in redirected to user page
+
+      @user = User.find_by(username: params[:user][:username])
+
+      if @user.try(:authenticate, params[:user][:password])
+
+
+       session[:user_id] = @user.id
+
+       redirect_to '/show'
+
+      else
+        redirect_to '/login'
+      end
     end
 
     def logout  #signing a user out
-        session.clear
+        session.delete :user_id
+
         redirect_to "/home"
+
 
     end
 
@@ -45,6 +60,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:users).permit(:username, :email, :password)
+        params.require(:user).permit(:username, :email, :password)
     end
 end

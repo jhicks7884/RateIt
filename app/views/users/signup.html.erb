@@ -1,7 +1,7 @@
 <h1>Sign_up For new Account</h1>
 
 
-<%= form_for :users, class: "new_sign_up" do |f| %>
+<%= form_for :user, class: "new_sign_up" do |f| %>
 
   <%= f.label :username %>
   <%= f.text_field :username, class: "shortInput" %> <br />
@@ -16,3 +16,4 @@
   <%= f.submit "Create account", class: "button createAccount" %>
 
 <% end %>
+

@@ -1,11 +1,16 @@
 <h1>Login to your Account</h1>
 
-<center><form method="POST" action="/sessions">
-  <p>Username: <input type="text" name="username"></p>
-  <p>Password: <input type="password" name="password"></p>
-  <button type="submit" id="submit">Submit</button>
-</form></center>
-<br>
+<%= form_for(:user, url: login_path) do |f|%>
+  <%= f.label :username %>
+  <%= f.text_field :username, class: "shortInput" %> <br />
+  <%= f.label :password %>
+  <%= f.password_field :password, class: "shortInput" %> <br />
+  
+  <%= f.submit "login", class: "button login" %>
+<% end %>
+
+
+
 <%= link_to("Log In With Google", '/auth/google_oauth2') %>
 <br>
 (JH).&copy;

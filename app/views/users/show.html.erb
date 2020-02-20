@@ -1,5 +1,15 @@
-<h1> Hello Welcome to RateIt </h1>
+<h1> Hello Welcome to RateIt <%= current_user.username %>  </h1>
+<h2> Choose A Categorie below to RateIt</h2>
 
-<%= current_user.username %>
 
- <a href="/logout">Log out</a>
+<INPUT TYPE="Radio" Name="Categories" Value="Car">Cars<br>
+<INPUT TYPE="Radio" Name="Categories" Value="Truck">Trucks<br>
+<INPUT TYPE="Radio" Name="Categories" Value="motorcycle">Motorcycles<br>
+
+
+<br>
+<br>
+
+<a href="/logout">Log out</a>
+
+

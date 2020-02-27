@@ -1,0 +1,43 @@
+<h1> Hello Welcome to RateIt User: <%= current_user.username  %>  </h1>
+<h2> Choose A Category below to RateIt.</h2>
+
+
+<br>Type Of Vehicles
+
+<%= form_for @vehicle, :url => {:action => "create_vehicles"} do |f| %>
+    
+    <%= f.label :Cars %>
+    <%= f.radio_button :vehicle_type, "Cars", class: "shortInput" %> <br />
+
+    <%= f.label :Trucks  %>
+    <%= f.radio_button :vehicle_type, "Trucks", class: "shortInput" %> <br />
+
+    <%= f.label :Motorcycles  %>
+    <%= f.radio_button :vehicle_type, "Motorcycles", class: "shortInput" %> <br />
+    
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    
+
+
+      <br>
+      Create a Vehicle<br>
+
+
+    <%= f.label :Year %>
+    <%= f.text_field :year %> <br />
+
+    <%= f.label :Make  %>
+    <%= f.text_field :make %> <br />
+
+    <%= f.label :Model  %>
+    <%= f.text_field :model %> <br />
+
+    <%= f.label :Style  %>
+    <%= f.text_field :style %> <br />
+
+    <%= f.hidden_field :user_id, value: current_user.id %>
+
+    <%= f.submit "Submit" %>  <%= link_to "Logout", logout_path %>
+   
+<% end %>
+ 

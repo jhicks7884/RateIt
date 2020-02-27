@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_17_155323) do
+ActiveRecord::Schema.define(version: 2) do
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer "vehicle_ratings"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -19,6 +23,15 @@ ActiveRecord::Schema.define(version: 2020_02_17_155323) do
     t.string "uid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "vehicles", force: :cascade do |t|
+    t.string "vehicle_type"
+    t.string "style"
+    t.string "model"
+    t.string "make"
+    t.integer "year"
+    t.integer "user_id"
   end
 
 end

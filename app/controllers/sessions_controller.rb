@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if @user.try(:authenticate, params[:user][:password])
          session[:user_id] = @user.id
        redirect_to '/show'
-       
+
     else
         redirect_to '/login'
     end

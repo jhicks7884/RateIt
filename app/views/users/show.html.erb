@@ -1,15 +1,9 @@
-<h1> Hello Welcome to RateIt <%= current_user.username %>  </h1>
-<h2> Choose A Categorie below to RateIt</h2>
+<h1> Hello Welcome to RateIt User: <%= current_user.username  %>  </h1>
+
+<h2>Choose a Category</h2>
+
+<%= link_to "Automobiles", vehicles_new_url %><br>
 
 
-<INPUT TYPE="Radio" Name="Categories" Value="Car">Cars<br>
-<INPUT TYPE="Radio" Name="Categories" Value="Truck">Trucks<br>
-<INPUT TYPE="Radio" Name="Categories" Value="motorcycle">Motorcycles<br>
-
-
-<br>
-<br>
-
-<a href="/logout">Log out</a>
-
+<%= link_to "Logout", logout_path %>
 

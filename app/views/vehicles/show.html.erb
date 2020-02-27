@@ -1,0 +1,21 @@
+<h1>RateIt User: <%= current_user.username %> </h1><br>
+
+<div>
+  <h3>Filter Vehicles:</h3>
+  <%= form_tag("/vehicles", method: "get") do %>
+    <%= select_tag "vehicle", options_from_collection_for_select(Vehicle.all, "id","model", "make"), include_blank: true %>
+    <%= submit_tag "Filter" %>
+  <% end %>
+</div>
+
+<% @vehicles.each do |post| %>
+
+<% end %>
+<% current_user.vehicles.select do |vehicle|%><br>
+ Vehicle Type:  <%= vehicle.vehicle_type  %><br>
+
+  Year:   <%= vehicle.year%><br>
+  Make:   <%= vehicle.make %><br>
+  Model:  <%= vehicle.model%>
+
+<%end%><br><%= link_to "Logout", logout_path %>

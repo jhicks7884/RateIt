@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   
-    has_many :vehicles
+    has_many :vehicles  # those were the vehicles created
+    has_many :ratings   
+   # has_many :vehicles, through: :ratings
+
 
 	has_secure_password
 

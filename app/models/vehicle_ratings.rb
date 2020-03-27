@@ -1,4 +1,4 @@
 class VehicleRatings < ApplicationRecord
-    belongs_to :user
-    belongs_to :vehicles
+    belongs_to :users
+    has_many :vehicles, through: :users
   end

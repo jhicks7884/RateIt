@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
        #users actions
+
   get 'home', to: 'users#home'
 
   get 'signup', to: 'users#signup'
@@ -18,6 +19,12 @@ Rails.application.routes.draw do
    get "/vehicles/selections", to: 'vehicles#show'
    post "/vehicles/selections", to: 'vehicles#create_vehicles'
    get "/vehicles/index", to: 'vehicles#index'
+
+   #Vehicle Ratings
+
+   get "/ratings/new", to: 'ratings#new'
+   #get "/ratings/", to: 'ratings#show'
+   post "/ratings/new", to: 'ratings#create'
 
 
 end

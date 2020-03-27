@@ -10,7 +10,7 @@ class VehiclesController < ApplicationController
          #Vehicle.find_by(vehicle_type: params[:vehicle_type])
          @vehicle = Vehicle.create(vehicle_params)
          
-         redirect_to '/vehicles/selections'
+         redirect_to '/ratings/new'
       else
          redirect_to '/logout'
       end

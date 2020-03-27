@@ -6,13 +6,13 @@
 
 <%= form_for @vehicle, :url => {:action => "create_vehicles"} do |f| %>
     
-    <%= f.label :Cars %>
+    <%= f.label :Car %>
     <%= f.radio_button :vehicle_type, "Cars", class: "shortInput" %> <br />
 
-    <%= f.label :Trucks  %>
+    <%= f.label :Truck  %>
     <%= f.radio_button :vehicle_type, "Trucks", class: "shortInput" %> <br />
 
-    <%= f.label :Motorcycles  %>
+    <%= f.label :Motorcycle  %>
     <%= f.radio_button :vehicle_type, "Motorcycles", class: "shortInput" %> <br />
     
     <%= f.hidden_field :user_id, value: current_user.id %>

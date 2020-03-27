@@ -12,7 +12,9 @@
 
   <body>
   <div>
-  
+  <% if logged_in? %>
+  <h1> Hello Welcome to RateIt User: <%= current_user.username  %>  </h1>
+  <% end %>
   </div>
     <%= yield %>
   </body>

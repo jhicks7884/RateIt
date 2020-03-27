@@ -1,3 +1,5 @@
 class Vehicle < ApplicationRecord
-  has_many :users, through: :vehicle_ratings
+  has_many :ratings
+  has_many :users, through: :ratings
+  belongs_to :user
 end

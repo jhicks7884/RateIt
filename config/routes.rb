@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'login', to: 'users#login'
   post '/login', to: 'sessions#logged_in'
 
-  get '/user/:id', to: 'users#show'
+  get "/users/:id", to: 'users#show'
   get '/logout', to: 'users#logout'
 
       #Vehicle action                                                         

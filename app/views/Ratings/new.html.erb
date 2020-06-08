@@ -2,14 +2,14 @@
 
   <h2>Select Current Vehicle to Rate</h2>
 
-   <%= current_user.vehicles.first do |vehicle| %><br>
+  <% current_user.vehicles.select do |vehicle| %><br>
     <%= vehicle.year %><br>
 
     <%= vehicle.model %><br>
 
     <%= vehicle.make %><br>
 
-   <%end%><br>
+  <%end%><br>
 
 <%= link_to "Logout", logout_path %>
 

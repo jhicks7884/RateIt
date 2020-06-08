@@ -1,18 +1,18 @@
-<h1>Login to your Account</h1>
+<center><h1>Login to your Account</h1>
 
 <%= form_for(:user, url: login_path) do |f|%>
   <%= f.label :username %>
   <%= f.text_field :username, class: "shortInput" %> <br />
   <%= f.label :password %>
-  <%= f.password_field :password, class: "shortInput" %> <br />
-  
-  <%= f.submit "login", class: "button login" %>
-<% end %>
+  <%= f.password_field :password, class: "shortInput" %><br><br>
+
+  <%= f.submit "login", class: "button login" %> <%= link_to("Log In With Google", '/auth/google_oauth2') %>
+<% end %> 
 
 
 
-<%= link_to("Log In With Google", '/auth/google_oauth2') %>
-<br>
+
+<br></center>
 (JH).&copy;
 
 

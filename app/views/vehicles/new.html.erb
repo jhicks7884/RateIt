@@ -4,7 +4,7 @@
 
 <br>Type Of Vehicle
 
-<%= form_for @vehicle, :url => {:action => "create_vehicles"} do |f| %>
+<%= form_for @vehicle, :url => {:action => "create"} do |f| %>
     
     <%= f.label :Car %>
     <%= f.radio_button :vehicle_type, "Cars", class: "shortInput" %> <br />
@@ -16,12 +16,9 @@
     <%= f.radio_button :vehicle_type, "Motorcycles", class: "shortInput" %> <br />
     
     <%= f.hidden_field :user_id, value: current_user.id %>
-    
-
 
       <br>
       Create a Vehicle<br>
-
 
     <%= f.label :Year %>
     <%= f.text_field :year %> <br />

@@ -1,0 +1,11 @@
+<div>
+<h3>Filter Vehicles:</h3>
+<%= form_tag("/vehicles", method: "get") do %>
+  <%= select_tag "vehicle", options_from_collection_for_select(Vehicle.all, "id","model", "make"), include_blank: true %>
+  <%= submit_tag "Filter" %>
+<% end %>
+
+
+
+
+<%= link_to "Logout", logout_path %>
